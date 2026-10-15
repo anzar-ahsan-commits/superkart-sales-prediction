@@ -1,0 +1,146 @@
+{
+  "model_name": "Random Forest",
+  "python_version": "3.13.16",
+  "package_versions": {
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "scipy": "1.16.3",
+    "scikit-learn": "1.6.1",
+    "joblib": "1.6.0"
+  },
+  "feature_columns": [
+    "Product_Weight",
+    "Product_Sugar_Content",
+    "Product_Allocated_Area",
+    "Product_MRP",
+    "Store_Size",
+    "Store_Location_City_Type",
+    "Store_Type",
+    "Product_Id_char",
+    "Store_Age_Years",
+    "Product_Type_Category"
+  ],
+  "numeric_features": [
+    "Product_Weight",
+    "Product_Allocated_Area",
+    "Product_MRP",
+    "Store_Age_Years"
+  ],
+  "categorical_features": [
+    "Product_Sugar_Content",
+    "Store_Size",
+    "Store_Location_City_Type",
+    "Store_Type",
+    "Product_Id_char",
+    "Product_Type_Category"
+  ],
+  "target_column": "Product_Store_Sales_Total",
+  "reference_year": 2025,
+  "reference_year_note": "2025 is inferred from the supplied example, not a confirmed observation year.",
+  "product_category_map": {
+    "Baking Goods": "Non Perishables",
+    "Breads": "Perishables",
+    "Breakfast": "Non Perishables",
+    "Canned": "Non Perishables",
+    "Dairy": "Perishables",
+    "Frozen Foods": "Perishables",
+    "Fruits and Vegetables": "Perishables",
+    "Hard Drinks": "Non Perishables",
+    "Health and Hygiene": "Non Perishables",
+    "Household": "Non Perishables",
+    "Meat": "Perishables",
+    "Others": "Non Perishables",
+    "Seafood": "Perishables",
+    "Snack Foods": "Non Perishables",
+    "Soft Drinks": "Non Perishables",
+    "Starchy Foods": "Non Perishables"
+  },
+  "training_categories": {
+    "Product_Sugar_Content": [
+      "Low Sugar",
+      "No Sugar",
+      "Regular"
+    ],
+    "Store_Size": [
+      "High",
+      "Medium",
+      "Small"
+    ],
+    "Store_Location_City_Type": [
+      "Tier 1",
+      "Tier 2",
+      "Tier 3"
+    ],
+    "Store_Type": [
+      "Departmental Store",
+      "Food Mart",
+      "Supermarket Type1",
+      "Supermarket Type2"
+    ],
+    "Product_Id_char": [
+      "DR",
+      "FD",
+      "NC"
+    ],
+    "Product_Type_Category": [
+      "Non Perishables",
+      "Perishables"
+    ]
+  },
+  "training_numeric_ranges": {
+    "Product_Weight": {
+      "min": 4.0,
+      "max": 20.65
+    },
+    "Product_Allocated_Area": {
+      "min": 0.004,
+      "max": 0.297
+    },
+    "Product_MRP": {
+      "min": 31.0,
+      "max": 254.34
+    },
+    "Store_Age_Years": {
+      "min": 16.0,
+      "max": 38.0
+    }
+  },
+  "known_store_combinations": [
+    {
+      "Store_Size": "Medium",
+      "Store_Location_City_Type": "Tier 2",
+      "Store_Type": "Supermarket Type2",
+      "Store_Age_Years": 16
+    },
+    {
+      "Store_Size": "Medium",
+      "Store_Location_City_Type": "Tier 1",
+      "Store_Type": "Departmental Store",
+      "Store_Age_Years": 26
+    },
+    {
+      "Store_Size": "High",
+      "Store_Location_City_Type": "Tier 2",
+      "Store_Type": "Supermarket Type1",
+      "Store_Age_Years": 38
+    },
+    {
+      "Store_Size": "Small",
+      "Store_Location_City_Type": "Tier 3",
+      "Store_Type": "Food Mart",
+      "Store_Age_Years": 27
+    }
+  ],
+  "best_parameters": {
+    "model__max_depth": null,
+    "model__max_features": 0.8,
+    "model__min_samples_leaf": 3
+  },
+  "test_metrics": {
+    "RMSE": 271.1451081681077,
+    "MAE": 99.35468216927917,
+    "R_squared": 0.9342487410940452
+  },
+  "training_rows": 7010,
+  "test_rows": 1753
+}
